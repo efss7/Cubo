@@ -3,5 +3,8 @@ import graphicBusiness from "../../controller/GraphicController";
 
 export const graphicRouter = Router();
 
-graphicRouter.post("/register", graphicBusiness.insert);
+graphicRouter.post("/insert", graphicBusiness.insert);
+graphicRouter.get("/select", graphicBusiness.select)
+graphicRouter.put("/update", graphicBusiness.update)
+graphicRouter.delete("/delete", graphicBusiness.delete)
 

@@ -1,4 +1,4 @@
-POST http://localhost:3003/graphic/register
+POST http://localhost:3003/graphic/insert
 Content-Type: application/json
 
 {
@@ -6,3 +6,25 @@ Content-Type: application/json
     "last_name":"Silva e Silva",
     "participation": 50
 }
+
+###
+GET  http://localhost:3003/graphic/select
+Content-Type: application/json
+###
+PUT http://localhost:3003/graphic/update
+Content-Type: application/json
+
+{
+    "first_name":"Eric Felipe",
+    "last_name":"Silva e Silva",
+    "participation": 20
+}
+###
+DELETE http://localhost:3003/graphic/delete
+Content-Type: application/json
+
+{
+    "first_name":"Eric Felipe",
+    "last_name":"Silva e Silva"
+}
+
