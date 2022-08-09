@@ -1,0 +1,8 @@
+POST http://localhost:3003/graphic/register
+Content-Type: application/json
+
+{
+    "first_name":"Eric Felipe",
+    "last_name":"Silva e Silva",
+    "participation": 50
+}

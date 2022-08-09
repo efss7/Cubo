@@ -1,16 +1,16 @@
 import { CustomError } from "../business/errors/CustomError";
-import { GraphicDTO } from "../model/Graphic";
+import { GraphicDB } from "../model/Graphic";
 import BaseDatabase from "./BaseDatabase";
 
 export class GraphicData extends BaseDatabase {
-  insert = async (input: GraphicDTO): Promise<void> => {
+  insert = async (input: GraphicDB): Promise<void> => {
     try {
       await BaseDatabase.connection("cubo").insert(input);
     } catch (error: any) {
       throw new CustomError(500, error.sqlMessage);
     }
   };
-  select = async ():Promise<GraphicDTO[]> => {
+  select = async ():Promise<GraphicDB[]> => {
     try {
         return BaseDatabase.connection("cubo")
         .select("*")
@@ -18,7 +18,7 @@ export class GraphicData extends BaseDatabase {
         throw new CustomError(500, error.sqlMessage);
     }
   }
-  update = async (input:GraphicDTO):Promise<void> => {
+  update = async (input:GraphicDB):Promise<void> => {
     try {
         await BaseDatabase.connection("cubo")
         .update({
@@ -33,7 +33,7 @@ export class GraphicData extends BaseDatabase {
         throw new CustomError(500, error.sqlMessage);
     }
   }
-  delete = async (input:GraphicDTO):Promise<void> => {
+  delete = async (input:GraphicDB):Promise<void> => {
     try {
         await BaseDatabase.connection("cubo")
         .where({

@@ -8,6 +8,12 @@ export default class Graphic{
 }
 
 export interface GraphicDTO{
+  id: string;
+  first_name: string;
+  last_name: string;
+  participation: number;
+}
+export interface GraphicDB{
     first_name: string;
     last_name: string;
     participation: number;

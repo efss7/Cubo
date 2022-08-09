@@ -1,20 +1,22 @@
 import { Request, Response } from "express";
-import { GraphicDTO } from "../model/Graphic";
+import  graphicBusiness, { GraphicBusiness } from "../business/GraphicBusiness";
+import { GraphicDB } from "../model/Graphic";
 
 export class GraphicController{
+    constructor( private graphicBusiness:GraphicBusiness){};
     insert = async(req:Request, res:Response):Promise<void> =>{
         const {first_name, last_name, participation} = req.body
         try {
-            const inputs:GraphicDTO = {first_name, last_name, participation}
-            await GraphicBusiness.insert(inputs)
+            const inputs:GraphicDB = {first_name, last_name, participation}
+            await this.graphicBusiness.insert(inputs)
             res.status(201).send("Registrado com sucesso");
         } catch (error:any) {
-            
+            res.status(error.statusCode || 400).send({ error: error.message });
         }
     }
     select = async (req:Request, res:Response):Promise<void> =>{
         try {
-            const result = await GraphicBusiness.select()
+            const result = await this.graphicBusiness.select()
             res.status(200).send(result)
         } catch (error:any) {
             res.status(error.statusCode || 400).send({ error: error.message });
@@ -23,8 +25,8 @@ export class GraphicController{
     update = async (req:Request, res:Response):Promise<void> =>{
         const {first_name, last_name, participation} = req.body
         try {
-            const inputs:GraphicDTO={first_name, last_name, participation}
-            await GraphicBusiness.update(inputs)
+            const inputs:GraphicDB={first_name, last_name, participation}
+            await this.graphicBusiness.update(inputs)
             res.status(201).send("Registrado alterado com sucesso");
         } catch (error:any) {
             res.status(error.statusCode || 400).send({ error: error.message });
@@ -33,11 +35,12 @@ export class GraphicController{
     delete = async(req:Request, res:Response):Promise<void> =>{
         const {first_name, last_name, participation} = req.body
         try {
-            const inputs:GraphicDTO = {first_name, last_name, participation}
-            await GraphicBusiness.delete(inputs)
+            const inputs:GraphicDB = {first_name, last_name, participation}
+            await this.graphicBusiness.delete(inputs)
             res.status(200).send("Registrado excluído com sucesso");
         } catch (error:any) {
             res.status(error.statusCode || 400).send({ error: error.message });
         }
     }
 }
+export default new GraphicController(graphicBusiness)
