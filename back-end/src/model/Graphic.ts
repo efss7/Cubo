@@ -7,6 +7,8 @@ export default class Graphic{
     ){}
 }
 
-export interface GraphicDTO extends Omit<Graphic, "id"> {
-
+export interface GraphicDTO{
+    first_name: string;
+    last_name: string;
+    participation: number;
 }
