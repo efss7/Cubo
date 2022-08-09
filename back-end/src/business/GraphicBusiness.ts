@@ -45,7 +45,7 @@ export class GraphicBusiness {
    }
   };
 
-  update = async (inputs: GraphicDB): Promise<void> => {
+  update = async (inputs: GraphicDTO): Promise<void> => {
     try {
         if (!inputs.first_name || !inputs.last_name)
           throw new Error("Nome ou Sobrenome não foram passados");
@@ -57,11 +57,9 @@ export class GraphicBusiness {
     }
   };
 
-  delete = async (inputs: GraphicDB): Promise<void> => {
+  delete = async (id:string): Promise<void> => {
   try {
-    if (!inputs.first_name || !inputs.last_name)
-      throw new Error("Nome ou Sobrenome não foram passados");
-    await this.graphicData.delete(inputs);
+    await this.graphicData.delete(id);
   } catch (error: any) {
     throw new CustomError(error.statusCode, error.message);
   }

@@ -1,5 +1,5 @@
 import { CustomError } from "../business/errors/CustomError";
-import { GraphicDB } from "../model/Graphic";
+import Graphic, { GraphicDB, GraphicDTO } from "../model/Graphic";
 import BaseDatabase from "./BaseDatabase";
 
 export class GraphicData extends BaseDatabase {
@@ -18,7 +18,7 @@ export class GraphicData extends BaseDatabase {
         throw new CustomError(500, error.sqlMessage);
     }
   }
-  update = async (input:GraphicDB):Promise<void> => {
+  update = async (input:GraphicDTO):Promise<void> => {
     try {
         await BaseDatabase.connection("cubo")
         .update({
@@ -26,19 +26,17 @@ export class GraphicData extends BaseDatabase {
           last_name: input.last_name,
           participation:input.participation,
         }).where({
-            first_name:input.first_name,
-            last_name:input.last_name
+            id:input.id
         });
     } catch (error:any) {
         throw new CustomError(500, error.sqlMessage);
     }
   }
-  delete = async (input:GraphicDB):Promise<void> => {
+  delete = async (id:string):Promise<void> => {
     try {
         await BaseDatabase.connection("cubo")
         .where({
-            first_name:input.first_name,
-            last_name:input.last_name
+            id
         })
         .delete()
     } catch (error:any) {

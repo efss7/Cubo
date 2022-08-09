@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import  graphicBusiness, { GraphicBusiness } from "../business/GraphicBusiness";
-import { GraphicDB } from "../model/Graphic";
+import { GraphicDB, GraphicDTO } from "../model/Graphic";
 
 export class GraphicController{
     constructor( private graphicBusiness:GraphicBusiness){};
@@ -23,9 +23,10 @@ export class GraphicController{
         }
     }
     update = async (req:Request, res:Response):Promise<void> =>{
-        const {first_name, last_name, participation} = req.body
+        const { first_name, last_name, participation } = req.body;
+        const id = req.params.id
         try {
-            const inputs:GraphicDB={first_name, last_name, participation}
+            const inputs:GraphicDTO={ id, first_name, last_name, participation}
             await this.graphicBusiness.update(inputs)
             res.status(201).send("Registrado alterado com sucesso");
         } catch (error:any) {
@@ -33,10 +34,9 @@ export class GraphicController{
         }
     }
     delete = async(req:Request, res:Response):Promise<void> =>{
-        const {first_name, last_name, participation} = req.body
+        const id = req.params.id as string
         try {
-            const inputs:GraphicDB = {first_name, last_name, participation}
-            await this.graphicBusiness.delete(inputs)
+            await this.graphicBusiness.delete(id)
             res.status(200).send("Registrado excluído com sucesso");
         } catch (error:any) {
             res.status(error.statusCode || 400).send({ error: error.message });

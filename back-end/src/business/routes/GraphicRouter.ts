@@ -5,6 +5,6 @@ export const graphicRouter = Router();
 
 graphicRouter.post("/insert", graphicBusiness.insert);
 graphicRouter.get("/select", graphicBusiness.select)
-graphicRouter.put("/update", graphicBusiness.update)
-graphicRouter.delete("/delete", graphicBusiness.delete)
+graphicRouter.put("/update/:id", graphicBusiness.update)
+graphicRouter.delete("/delete/:id", graphicBusiness.delete)
 

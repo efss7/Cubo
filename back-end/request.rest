@@ -11,20 +11,16 @@ Content-Type: application/json
 GET  http://localhost:3003/graphic/select
 Content-Type: application/json
 ###
-PUT http://localhost:3003/graphic/update
+PUT http://localhost:3003/graphic/update/d7492aea-90f2-472a-bdfc-222becb4398d
 Content-Type: application/json
 
 {
     "first_name":"Eric Felipe",
-    "last_name":"Silva e Silva",
+    "last_name":"Silva",
     "participation": 20
 }
 ###
-DELETE http://localhost:3003/graphic/delete
+DELETE http://localhost:3003/graphic/delete/d7492aea-90f2-472a-bdfc-222becb4398d
 Content-Type: application/json
 
-{
-    "first_name":"Eric Felipe",
-    "last_name":"Silva e Silva"
-}
 
