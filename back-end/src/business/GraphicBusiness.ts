@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { GraphicData } from "../data/GraphicData";
 import { GraphicDB, GraphicDTO } from "../model/Graphic";
 import IdGenerator from "../services/IdGenerator";
@@ -7,7 +8,7 @@ export class GraphicBusiness {
   constructor(
     private graphicData: GraphicData,
     private idGenerator: IdGenerator
-  ) {}
+  ) { }
 
   insert = async (inputs: GraphicDB): Promise<void> => {
     try {
