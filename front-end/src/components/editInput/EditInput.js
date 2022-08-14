@@ -1,21 +1,27 @@
-import { useContext } from "react";
-import { useInput } from "../../hooks/useInputs";
+import { useContext, useEffect, useState } from "react";
+import useForm  from "../../hooks/useForm";
 import { ParticipationContext } from "../../global/Context";
-import { ButtonDelete, ButtonUpdate, Container, Form, Inputs } from "./styles";
+import { ButtonDelete, ButtonUpdate, Container, Form, Inputs } from "./style";
 
 export const EditInputs = () => {
   const globalState = useContext(ParticipationContext);
-  const [value, handleValue, clearInput] = useInput({
-    first_name: "",
-    last_name: "",
-    participation: "",
+  const [person, setPerson] = useState(globalState.selectedPersonData)
+  const {form, onChange, clearFields} = useForm({
+    first_name:  person.first_name,
+    last_name: person.last_name,
+    participation: person.participation
   });
+  
+  useEffect(()=>{
+    setPerson(globalState.selectedPersonData)
+  },[globalState.selectedPersonData])
 
   const preventDefaultFunction = (event) => {
     event.preventDefault();
-    globalState.editParticipation(value);
+    form.id = globalState.selectedPersonData.id    
+    globalState.editParticipation(form);
     globalState.showEditFn();
-    clearInput();
+    clearFields();
   };
 
   const callTwoFunctions = () => {
@@ -30,24 +36,25 @@ export const EditInputs = () => {
           <Form onSubmit={preventDefaultFunction}>
             <Inputs
               name="first_name"
-              value={value.first_name}
-              onChange={handleValue}
+              value={form.first_name}
+              onChange={onChange}
               placeholder="Nome"
               required
             />
             <Inputs
               name="last_name"
-              value={value.last_name}
-              onChange={handleValue}
+              value={form.last_name}
+              onChange={onChange}
               placeholder="Sobrenome"
               required
             />
             <Inputs
               name="participation"
-              value={value.participation}
-              onChange={handleValue}
+              value={form.participation}
+              onChange={onChange}
               placeholder="Participation"
               required
+              type={"number"}
             />
             <ButtonUpdate>ATUALIZAR</ButtonUpdate>
           </Form>

@@ -1,10 +1,10 @@
-import { EditInputs } from "../Components/EditInputs/EditInputs";
-import Inputs from "../Components/Inputs/inputs";
-import { PieChart } from "../Components/PieChart/PieChart";
-import Table from "../../components/table";
+import { EditInputs } from "../../components/editInput/EditInput";
+import Inputs from "../../components/inputs/Input";
+import { PieChart } from "../../components/pieChart/PieChart";
+import Table from "../../components/table/Table";
 import * as s from "./style";
 
-export default function Home() {
+export function Dashboard() {
   return (
     <>
       <s.BlueBox>

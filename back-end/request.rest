@@ -2,25 +2,25 @@ POST http://localhost:3003/graphic/insert
 Content-Type: application/json
 
 {
-    "first_name":"Eric Felipe",
-    "last_name":"Silva e Silva",
-    "participation": 50
+    "first_name":"Adeire",
+    "last_name":"Moreira",
+    "participation": 20
 }
 
 ###
 GET  http://localhost:3003/graphic/select
 Content-Type: application/json
 ###
-PUT http://localhost:3003/graphic/update/d7492aea-90f2-472a-bdfc-222becb4398d
+PUT http://localhost:3003/graphic/update/a568b08c-00bd-472f-aec7-b80e52c5d644
 Content-Type: application/json
 
 {
-    "first_name":"Eric Felipe",
-    "last_name":"Silva",
+    "first_name":"Eduardo",
+    "last_name":"Osiro",
     "participation": 20
 }
 ###
-DELETE http://localhost:3003/graphic/delete/d7492aea-90f2-472a-bdfc-222becb4398d
+DELETE http://localhost:3003/graphic/delete/a568b08c-00bd-472f-aec7-b80e52c5d644
 Content-Type: application/json
 
 

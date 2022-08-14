@@ -1,13 +1,12 @@
 import Chart from "react-google-charts";
 import { useContext } from "react";
-import { ParticipationContext } from "../../GlobalState/context";
-import { Data } from "../Data/Data";
+import { ParticipationContext } from "../../global/Context";
+import { Data } from "../data/Data";
 import { Container, ContainerLoader } from "./style";
-import { Loader } from "../Loader/Loader";
+import { Loader } from "../../components/loader/Loader";
 
 export const PieChart = () => {
   const globalState = useContext(ParticipationContext);
-  console.log(globalState.loader);
 
   const arrayData = globalState.list.map((people) => {
     return [`${people.first_name}`, people.participation];

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import useForm from "../../hooks/useForm";
-import { ParticipationContext } from "../../global/State";
+import { ParticipationContext } from "../../global/Context";
 import * as s from "./style";
 
 const Inputs = () => {
@@ -8,7 +8,7 @@ const Inputs = () => {
   const { form, onChange, clearFields } = useForm({
     first_name: "",
     last_name: "",
-    participation: "",
+    participation: ""
   });
 
   const preventDefaultFunction = (event) => {
@@ -20,7 +20,7 @@ const Inputs = () => {
   return (
     <s.Form onSubmit={preventDefaultFunction}>
       <s.Inputs
-        name="fist_name"
+        name="first_name"
         value={form.first_name}
         onChange={onChange}
         placeholder="Nome"

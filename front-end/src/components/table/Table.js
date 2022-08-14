@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ParticipationContext } from "../../GlobalState/context";
+import { ParticipationContext } from "../../global/Context";
 import {
   Aligned,
   Celula,
@@ -9,13 +9,13 @@ import {
   Participation,
   Table1,
 } from "./style";
-import { Message } from "../Message/Message";
+import { Message } from "../../components/message/Message";
 
 const Table = () => {
   const globalState = useContext(ParticipationContext);
 
-  const twoFunctionsCall = (first_name, last_name) => {
-    globalState.editTableDataFn(first_name, last_name);
+  const twoFunctionsCall = ( id, first_name, last_name, participation) => {
+    globalState.editTableDataFn(id, first_name, last_name, participation);
     globalState.showEditFn();
   };
 
@@ -26,9 +26,9 @@ const Table = () => {
         <thead>
           <tr>
             <Id>&nbsp;</Id>
-            <Aligned>First Name</Aligned>
-            <Aligned>Last Name</Aligned>
-            <Participation>Participation</Participation>
+            <Aligned>Nome</Aligned>
+            <Aligned>Sobrenome</Aligned>
+            <Participation>Participação</Participation>
           </tr>
         </thead>
         <tbody>
@@ -38,10 +38,10 @@ const Table = () => {
                 <tr
                   key={people.id}
                   onDoubleClick={() =>
-                    twoFunctionsCall(people.first_name, people.last_name)
+                    twoFunctionsCall( people.id, people.first_name, people.last_name, people.participation)
                   }
                 >
-                  <Celula>{people.id}</Celula>
+                  <Celula>{people.index}</Celula>
                   <CelulaTd>{people.first_name}</CelulaTd>
                   <CelulaTd>{people.last_name}</CelulaTd>
                   <Celula>{people.participation}%</Celula>

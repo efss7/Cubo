@@ -10,7 +10,7 @@ const useForm = (initialState) => {
 
   const clearFields = () => setForm(initialState);
 
-  return { form, onChange, clearFields };
+  return  { form, onChange, clearFields } ;
 };
 
 export default useForm;

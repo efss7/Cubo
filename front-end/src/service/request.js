@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BaseUrl = "https://cubo-eric.herokuapp.com/";
+const BaseUrl = "http://localhost:3003/";
 
 export const insert = async (form) => {
   try {
@@ -23,7 +23,7 @@ export const selectAll = async (getAll, setLoader) => {
 
 export const update = async (form) => {
   try {
-    await axios.put(`${BaseUrl}graphic/update`, form);
+    await axios.put(`${BaseUrl}graphic/update/${form.id}`, form);
   } catch (error) {
     console.log(error.response.data);
   }
@@ -31,7 +31,7 @@ export const update = async (form) => {
 
 export const deleteColum = async (id) => {
   try {
-    await axios.delete(`${BaseUrl}graphic/delete`, { data: id });
+    await axios.delete(`${BaseUrl}graphic/delete/${id}`);
   } catch (error) {
     console.log(error.response.data);
   }
