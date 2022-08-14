@@ -7,7 +7,7 @@
 <a href="#postman">Postman</a> |
 <a href="#features">Features</a> |
 <a href="#front">Rodando o Front-end</a> |
-<a href="#back">Rodando o back-end</a> |
+<a href="#back">Rodando o Back-end</a> |
 <a href="#desenvolvedores">Desenvolvedores</a>
 </p>
 
