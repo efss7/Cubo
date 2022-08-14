@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+<p>
+<a href="#sobre">Sobre</a> |
+<a href="#imagens">Imagens</a> |
+<a href="#tecnologia">Tecnologia</a> |
+<a href="#link">Links</a> |
+<a href="#documentação">Documentação</a> |
+<a href="#postman">Postman</a> |
+<a href="#features">Features</a> |
+<a href="#front">Rodando o Front-end</a> |
+<a href="#back">Rodando o back-end</a> |
+<a href="#desenvolvedores">Desenvolvedores</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 id="sobre">📊 Gráfico Participação</h1>
 
-## Available Scripts
+Cubo é um projeto Full-Stack desenvolvido durante o bootcamp da Labenu para praticar React, consumo de API e sua criação. O front-end é uma página onde podemos fornecer o nome, sobrenome e cota de participação, os dados são mostrados em um gráfico, os dados podem ser editados ou excluídos. O Back-end é um CRUD dos dados enviados pelo front-end. As tecnologias utilizadas no front-end foram **React, Javascript, Styled-Components e Axios**. Já o back-end foi desenvolvido com **NodeJS, TypeScript e ExpressJS** utilizando **MySQL** como banco de dados e **Jest** para teste unitários.
 
-In the project directory, you can run:
+<h2 id="imagens">📱 Imagens do site</h2>
 
-### `npm start`
+![Gráfico](image.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2 id="tecnologia">🛠 Tecnologias</h2>
 
-### `npm test`
+- [React](https://pt-br.reactjs.org/docs/getting-started.html)
+- [Javascript](https://www.javascript.com/)
+- [Axios](https://axios-http.com/ptbr/)
+- [Styled-Components](https://styled-components.com/)
+- [NodeJS](https://nodejs.org/en/docs/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ExpressJs](http://expressjs.com/pt-br/)
+- [MySql](https://dev.mysql.com/doc/)
+- [Jest](https://jestjs.io/pt-BR/docs/api)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2 id="link">🔗 Links</h2>
 
-### `npm run build`
+- ### Link base da API https://cubo-eric.herokuapp.com/
+- ### Link da Aplicação https://lively-muscle.surge.sh/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h2 id="documentação">📃 Documentação</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Na documentação você encontra todas informações sobre como usar cada endpoint da API. Você pode clicar em "Run in Postman" para testar os endpoints na versão web do postman.
+- [Documentação](https://documenter.getpostman.com/view/20351432/VUjSGj7D)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2 id="postman"> <img src="https://user-images.githubusercontent.com/98994187/182048033-f81fac19-1c26-45c0-96da-a5ffbc0defec.svg" height="20" width="20" alt="postman logo"  /> Postman</h2>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Você pode testar a API com Postman.
+- O Postman é um API Client que facilita aos desenvolvedores criar, compartilhar, testar e documentar APIs. Isso é feito, permitindo aos usuários criar e salvar solicitações HTTP e HTTPs simples e complexas, bem como ler suas respostas.
+- [Download do Postman](https://www.postman.com/downloads/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h2 id="features">✔️ Features</h2>
 
-## Learn More
+### 💻 Front-End
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 📋 Cadastrar participação.
+- ✒ Edição do cadastro.
+- 🗑 Excluir participação.
+- 📈 Gráfico que apresenta a participação de cada membro.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🗃 Back-End
 
-### Code Splitting
+- Recebe um CRUD de dados enviados pelo Front para tratar e alocar no banco de dados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h2 id="front"> 🎲  Rodando o Front-End</h2>
 
-### Analyzing the Bundle Size
+### Pre-Requisitos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Making a Progressive Web App
+### Como instalar e Rodar
+* Para baixar o projeto
+```
+git clone https://github.com/efss7/Cubo/tree/main/front-end
+```
+* Para instalar e rodar o projeto
+```
+3. npm install
+4. npm start
+    ou
+3. yarn install
+4. yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+<h2 id="back"> 🎲 Rodando o Back End (servidor)</h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Pre-Requisitos
 
-### Deployment
+- Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/),
+- Uma instancia de um banco de dados MySQL
+- Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Como instalar e Rodar
+* Para baixar o projeto
+```
+git https://github.com/efss7/Cubo/tree/main/back-end
 
-### `npm run build` fails to minify
+```
+* Para instalar e rodar o projeto
+```
+3. npm install
+4. npm dev
+    ou
+3. yarn install
+4. yarn dev
+```
+* Para rodar os testes 
+```
+5. npm test
+5. yarn test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Renomeie o arquivo ```.env.example```  para ```.env``` e preencha as variáveis com seus dados do banco de dados MySQL. É muito importante para a execução do servidor.
+
+<h2 id="desenvolvedor">👨‍💻 Desenvolvedor</h2>
+<table>         
+<td><a href="https://github.com/efss7"><img style="border-radius: 50%;" src="https://github.com/efss7.png" width="100px;" alt="Eric Felipe photo"/><br /><sub><b>Eric Silva</b></sub></a><br />   
+</table>
+
+<a href="#voltar">Voltar para o topo ⬆️</a>
