@@ -10,7 +10,7 @@ export const insert = async (form) => {
   }
 };
 
-export const select = async (getAll, setLoader) => {
+export const selectAll = async (getAll, setLoader) => {
   setLoader(true);
   try {
     const result = await axios.get(`${BaseUrl}graphic/select`);
