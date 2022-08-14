@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BaseUrl = "http://localhost:3003/";
+const BaseUrl = "https://cubo-eric.herokuapp.com/";
 
 export const insert = async (form) => {
   try {
